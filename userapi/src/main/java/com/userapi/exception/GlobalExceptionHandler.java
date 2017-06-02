@@ -11,7 +11,7 @@ public class GlobalExceptionHandler {
 
 	@ExceptionHandler({ Exception.class })
 	public ResponseEntity<?> exceptionHandler(Exception ex) {
-		ErrorResponse errorResponse = new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(),HttpStatus.INTERNAL_SERVER_ERROR, ex.getLocalizedMessage(), "error occurred");
-		return new ResponseEntity<Object>(errorResponse, new HttpHeaders(), errorResponse.getHttpStatus());
+		ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, HttpStatus.INTERNAL_SERVER_ERROR.value(), "error occurred", ex.getLocalizedMessage());
+		return new ResponseEntity<Object>(apiError, new HttpHeaders(),HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }
