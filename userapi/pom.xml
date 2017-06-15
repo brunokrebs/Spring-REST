@@ -79,10 +79,15 @@
 			<version>8.1.0.Final</version>
 		</dependency>
 
+
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
+
 		</dependency>
+
+
 
 	</dependencies>
 
