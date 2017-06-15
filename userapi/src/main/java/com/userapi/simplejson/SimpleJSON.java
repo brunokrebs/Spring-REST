@@ -17,17 +17,17 @@ public class SimpleJSON {
 	public JSONObject getUserJSON(List<User> userList){
 		JSONArray JSONArray = new JSONArray();
 		for (User userinfo : userList){
-			JSONObject root1 = new JSONObject();
-			root1.put("id", userinfo.getUserid());
-			root1.put("fname", userinfo.getFname());
-			root1.put("lname", userinfo.getLname());
-			root1.put("address", userinfo.getAddress());
-			root1.put("contact", userinfo.getContact());
-			JSONArray.add(root1);		
+			JSONObject jsonObject = new JSONObject();
+			jsonObject.put("id", userinfo.getUserid());
+			jsonObject.put("fname", userinfo.getFname());
+			jsonObject.put("lname", userinfo.getLname());
+			jsonObject.put("address", userinfo.getAddress());
+			jsonObject.put("contact", userinfo.getContact());
+			JSONArray.add(jsonObject);		
 		}
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("data", JSONArray);
-		return jsonObject;
+		JSONObject userJsonObject = new JSONObject();
+		userJsonObject.put("data", JSONArray);
+		return userJsonObject;
 	}
 	
 	public JSONObject getErrorJSON(ApiError apiError){
