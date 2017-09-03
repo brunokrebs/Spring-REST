@@ -13,13 +13,11 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.userapi.simplejson.SimpleJSON;
-
 @ControllerAdvice
 public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
 	
 	@Autowired
-	private SimpleJSON simpleJSON;
+	private ErrorService simpleJSON;
 
 	@ExceptionHandler({ MethodArgumentTypeMismatchException.class })
 	public ResponseEntity<?> handleMethodArgumentTypeMismatch(MethodArgumentTypeMismatchException ex,

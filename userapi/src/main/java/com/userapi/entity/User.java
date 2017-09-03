@@ -1,6 +1,10 @@
 package com.userapi.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Field;
@@ -12,21 +16,20 @@ import org.hibernate.search.annotations.Store;
 @Table(name = "user")
 @Indexed
 public class User {
-	
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int userid;
-    @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
-    private String fname;
-    @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
-    private String lname;
-    @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
-    private String address;
-    @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
-    private String contact;
-    
-    
-    public User() {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int userid;
+	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
+	private String fname;
+	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
+	private String lname;
+	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
+	private String address;
+	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
+	private String contact;
+
+	public User() {
 		super();
 	}
 
@@ -37,8 +40,6 @@ public class User {
 		this.address = address;
 		this.contact = contact;
 	}
-	
-	
 
 	public User(int userid, String fname, String lname, String address, String contact) {
 		super();
@@ -50,50 +51,49 @@ public class User {
 	}
 
 	public int getUserid() {
-        return userid;
-    }
+		return userid;
+	}
 
-    public void setUserid(int userid) {
-        this.userid = userid;
-    }
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
 
-    public String getFname() {
-        return fname;
-    }
+	public String getFname() {
+		return fname;
+	}
 
-    public void setFname(String fname) {
-        this.fname = fname;
-    }
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
 
-    public String getLname() {
-        return lname;
-    }
+	public String getLname() {
+		return lname;
+	}
 
-    public void setLname(String lname) {
-        this.lname = lname;
-    }
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
 
-    public String getAddress() {
-        return address;
-    }
+	public String getAddress() {
+		return address;
+	}
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
-    public String getContact() {
-        return contact;
-    }
+	public String getContact() {
+		return contact;
+	}
 
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-	
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
 	@Override
 	public String toString() {
 		return "User [userid=" + userid + ", fname=" + fname + ", lname=" + lname + ", address=" + address
 				+ ", contact=" + contact + "]";
 	}
-    
-    
+
 }
