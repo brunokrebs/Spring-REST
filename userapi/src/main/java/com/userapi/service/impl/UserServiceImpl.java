@@ -1,21 +1,24 @@
 package com.userapi.service.impl;
 
-import java.util.List;
-
+import com.userapi.entity.User;
+import com.userapi.jpa.UserRepository;
+import com.userapi.service.UserService;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.userapi.entity.User;
-import com.userapi.jpa.UserRepository;
-import com.userapi.service.UserService;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
 
-	@Autowired
+    @Autowired
 	private UserRepository userRepository;
+
+	public UserServiceImpl(UserRepository userRepository){
+		this.userRepository = userRepository;
+	}
 
 	@Override
 	public void insert(User t) {
