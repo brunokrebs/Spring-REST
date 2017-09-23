@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class ErrorService {
 	
-	@SuppressWarnings("unchecked")
 	public JSONObject getErrorJSON(ApiError apiError) {
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("message", apiError.getMessage());
